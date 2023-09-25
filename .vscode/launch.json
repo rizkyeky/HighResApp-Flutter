@@ -1,0 +1,65 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "highres",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "highres (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "highres (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "cvdnn",
+            "cwd": "deps/cvdnn",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "cvdnn (profile mode)",
+            "cwd": "deps/cvdnn",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "cvdnn (release mode)",
+            "cwd": "deps/cvdnn",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "cvdnn_macos",
+            "cwd": "deps/cvdnn_macos",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "cvdnn_macos (profile mode)",
+            "cwd": "deps/cvdnn_macos",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "cvdnn_macos (release mode)",
+            "cwd": "deps/cvdnn_macos",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

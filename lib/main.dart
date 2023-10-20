@@ -79,10 +79,10 @@ class _HomePageState extends State<HomePage> {
     super.initState();
 
     if (Platform.isMacOS) {
-      _isLoading = true;
-      _cvdnnMacos.initModel().then((_) {
-        setState(() => _isLoading = false);
-      });
+      // _isLoading = true;
+      // _cvdnnMacos.initModel().then((_) {
+      //   setState(() => _isLoading = false);
+      // });
     } else if (Platform.isIOS) {
       _isLoading = true;
       _cvdnnIos.getPlatformVersion().then((value) => print(value));

@@ -27,5 +27,5 @@ A new Flutter FFI plugin project.
   s.swift_version = '5.0'
 
   s.vendored_libraries = 'Libs/**/*.dylib'
-  s.resources = ['Assets/animesr.onnx']
+  # s.resources = ['Assets/animesr.onnx']
 end

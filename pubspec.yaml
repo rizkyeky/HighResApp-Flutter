@@ -47,12 +47,12 @@ dependencies:
     path: deps/cvdnn_macos/
   cvdnn_ios:
     path: deps/cvdnn_ios/
-  torch_sr:
-    path: ../torch_sr/
-  torch_cpp:
-    path: ../torch_cpp/
-  torch_ffi:
-    path: ../torch_ffi/
+  # torch_sr:
+  #   path: ../torch_sr/
+  # torch_cpp:
+  #   path: ../torch_cpp/
+  # torch_ffi:
+  #   path: ../torch_ffi/
 
 dev_dependencies:
   flutter_test:
@@ -78,7 +78,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/naruto.jpg
+    - assets/animesr.onnx
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

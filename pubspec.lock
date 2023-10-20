@@ -355,27 +355,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.0"
-  torch_cpp:
-    dependency: "direct main"
-    description:
-      path: "../torch_cpp"
-      relative: true
-    source: path
-    version: "0.0.1"
-  torch_ffi:
-    dependency: "direct main"
-    description:
-      path: "../torch_ffi"
-      relative: true
-    source: path
-    version: "0.0.1"
-  torch_sr:
-    dependency: "direct main"
-    description:
-      path: "../torch_sr"
-      relative: true
-    source: path
-    version: "0.0.1"
   vector_math:
     dependency: transitive
     description:

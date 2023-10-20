@@ -12,7 +12,11 @@ find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 link_directories(${OpenCV_LIBRARY_DIRS})
 
+include_directories("/opt/homebrew/Cellar/onnxruntime/1.16.1/include")
+file(GLOB ONNXRUNTIME_LIBRARIES "/opt/homebrew/Cellar/onnxruntime/1.16.1/lib/*.dylib")
+
 # add_library(cvdnn_macos SHARED "cvdnn.cpp")
-add_executable(test_cvdnn "test.c")
+add_executable(test_cvdnn "cvdnn.cpp")
 target_link_libraries(test_cvdnn ${OpenCV_LIBRARIES})
-target_link_libraries(test_cvdnn "${CMAKE_CURRENT_SOURCE_DIR}/build/libcvdnn_macos.dylib")
+target_link_libraries(test_cvdnn ${ONNXRUNTIME_LIBRARIES})
+# target_link_libraries(test_cvdnn "${CMAKE_CURRENT_SOURCE_DIR}/build/libcvdnn_macos.dylib")

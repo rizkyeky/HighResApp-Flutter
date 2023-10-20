@@ -49,7 +49,7 @@ class CvdnnMacos {
 const String _libName = 'cvdnn_macos';
 String get _modelPath {
   final appPath = Directory(Platform.resolvedExecutable).parent.parent.path;
-  return pth.join(appPath, 'Frameworks', '$_libName.framework', 'Resources', 'animesr.onnx');
+  return pth.join(appPath, 'Frameworks', 'App.framework', 'Resources', 'flutter_assets', 'assets', 'animesr.onnx');
 }
 
 ffi.DynamicLibrary get _dylib => ffi.DynamicLibrary.executable();
@@ -76,10 +76,15 @@ Future<SendPort> initModelIsolateSendPort = () async {
 
   await Isolate.spawn((SendPort sendPort) async {
     final ReceivePort helperReceivePort = ReceivePort()
-      ..listen((dynamic data) {
+      ..listen((dynamic data) async {
         if (data is DataIsolate) {
           try {
-            _bindings.initNetFromOnnx(_modelPath.toNativeUtf8());
+            final file = File(_modelPath);
+            final isFile = await file.exists();
+            if (isFile) {
+              print('Found $_modelPath');
+              _bindings.initNetFromOnnx(_modelPath.toNativeUtf8());
+            }
           } catch (e) {
             throw Exception('Error init model');
           }

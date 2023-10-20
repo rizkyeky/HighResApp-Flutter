@@ -15,12 +15,13 @@ class CvdnnIos {
   final String _libName = 'cvdnn_ios';
   String get _modelPath {
     final appPath = Directory(Platform.resolvedExecutable).parent.path;
-    return pth.join(appPath, 'Frameworks', '$_libName.framework', 'animesr.onnx');
+    return pth.join(appPath, 'Frameworks', 'App.framework', 'flutter_assets', 'assets', 'animesr.onnx');
   }
 
   Future<String?> initModel() async {
     final file = File(_modelPath);
     final isFile = await file.exists();
+    if (isFile) print('Found $_modelPath');
     return isFile ? CvdnnIosPlatform.instance.initModel(_modelPath) : null;
   }
 
@@ -28,6 +29,10 @@ class CvdnnIos {
     final baseName = pth.basename(imagePath);
     final outputPath = '${(await _appCachePath)}/$baseName';
     await CvdnnIosPlatform.instance.generateImage(imagePath, outputPath);
+    final file = File(outputPath);
+    final isFile = await file.exists();
+    if (isFile) print('Found $outputPath');
+    else print('Not Found');
     return outputPath;
   }
 }
